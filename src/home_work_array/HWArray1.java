@@ -10,12 +10,12 @@ public class HWArray1 {
     public static void main(String[] args) {
         //int[] array = {1, 5, 2, 7, 10, 6, 9};
         int[] array = {9, 9, 9};
-        //task1(array);
-        //task2(array);
-        //task3(array);
-        //task4(array);
-        //task5(array);
-        //task6(array);
+        task1(array);
+        task2(array);
+        task3(array);
+        task4(array);
+        task5(array);
+        task6(array);
         task7(array);
     }
     public static void task1 (int[] array) {
@@ -72,7 +72,7 @@ public class HWArray1 {
     public static void task5 (int[] array) {
         //Пройти по массиву и поменять местами элементы первый и последний, второй и
         //предпоследний и т.д.
-        int number = 0;
+        int number;
         for (int i = 0; i < array.length; i++) {
             if((i == 0) || (i == 1)) {
                 number = array[i];
@@ -85,7 +85,7 @@ public class HWArray1 {
     public static void task6 (int[] array) {
         //Проверить, является ли массив возрастающей последовательностью (каждое следующее
         //число больше предыдущего).
-        int max = 0;
+        int max;
         int i = 0;
         do{
             i++;
