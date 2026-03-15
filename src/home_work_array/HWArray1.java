@@ -12,7 +12,8 @@ public class HWArray1 {
         //task1(array);
         //task2(array);
         //task3(array);
-        task4(array);
+        //task4(array);
+        task5(array);
 
     }
     public static void task1 (int[] array) {
@@ -21,9 +22,9 @@ public class HWArray1 {
             System.out.print(number + " ");
         }
         for (int i = 0; i < array.length / 2; i++) {
-            int temp = array[i];
+            int number = array[i];
             array[i] = array[array.length - 1 - i];
-            array[array.length - 1 - i] = temp;
+            array[array.length - 1 - i] = number;
         }
         System.out.println(Arrays.toString(array));
 
@@ -69,5 +70,31 @@ public class HWArray1 {
     public static void task5 (int[] array) {
         //Пройти по массиву и поменять местами элементы первый и последний, второй и
         //предпоследний и т.д.
+        int number = 0;
+        for (int i = 0; i < array.length; i++) {
+            if((i == 0) || (i == 1)) {
+                number = array[i];
+                array[i] = array[array.length - 1 - i];
+                array[array.length - 1 - i] = number;
+            }
+        }
+        System.out.println(Arrays.toString(array));
+    }
+    public static void task6 (int[] array) {
+        //Проверить, является ли массив возрастающей последовательностью (каждое следующее
+        //число больше предыдущего).
+        int max = array[1];
+        int i = 0;
+        while (array.length > i && max > array[i]) {
+            i++;
+            if(i == 0) {
+                max = array[i + 2];
+            }
+            max = array[i + 1];
+            
+        }
+
+
+
     }
 }
