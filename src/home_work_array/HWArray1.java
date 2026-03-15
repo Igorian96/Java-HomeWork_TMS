@@ -8,14 +8,15 @@ import java.util.Arrays;
 
 public class HWArray1 {
     public static void main(String[] args) {
-        //int[] array = {1, 5, 2, 7, 10, -5, -18, 25, 50, 0};
-        int[] array = {1, 2, 3, 10, 7};
+        //int[] array = {1, 5, 2, 7, 10, 6, 9};
+        int[] array = {9, 9, 9};
         //task1(array);
         //task2(array);
         //task3(array);
         //task4(array);
         //task5(array);
-        task6(array);
+        //task6(array);
+        task7(array);
     }
     public static void task1 (int[] array) {
         //Пройти по массиву, вывести все элементы в прямом и в обратном порядке.
@@ -99,6 +100,21 @@ public class HWArray1 {
         } else {
             System.out.println("не является массив возрастающей последовательностью");
         }
-
+    }
+    public static void task7 (int[] array) {
+        //Имеется массив из неотрицательных чисел(любой). Представьте что массив
+        //представляет целое число (Например массив {1,2,3} -> 123, {9,9,9} -> 999). Задача
+        //добавить единицу к этому “числу” и на выходе получить исправленный массив. Массив не
+        //содержит нуля в начале, кроме самого числа 0.
+        //Пример:
+        //Input: [1,4,0,5,6,3]
+        //Output: [1,4,0,5,6,4]
+        //Input: [9,9,9]
+        //Output: [1,0,0,0]
+        String numberStr = "";
+        for (int i = 0; i < array.length; i++) {
+            numberStr = numberStr + array[i];
+        }
+        System.out.println(Integer.parseInt(numberStr) + 1);
     }
 }
