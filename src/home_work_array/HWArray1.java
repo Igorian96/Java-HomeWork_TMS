@@ -8,13 +8,14 @@ import java.util.Arrays;
 
 public class HWArray1 {
     public static void main(String[] args) {
-        int[] array = {1, 5, 2, 7, 10, -5, -18, 25, 50, 0};
+        //int[] array = {1, 5, 2, 7, 10, -5, -18, 25, 50, 0};
+        int[] array = {1, 2, 3, 10, 7};
         //task1(array);
         //task2(array);
         //task3(array);
         //task4(array);
-        task5(array);
-
+        //task5(array);
+        task6(array);
     }
     public static void task1 (int[] array) {
         //Пройти по массиву, вывести все элементы в прямом и в обратном порядке.
@@ -83,18 +84,21 @@ public class HWArray1 {
     public static void task6 (int[] array) {
         //Проверить, является ли массив возрастающей последовательностью (каждое следующее
         //число больше предыдущего).
-        int max = array[1];
+        int max = 0;
         int i = 0;
-        while (array.length > i && max > array[i]) {
+        do{
             i++;
-            if(i == 0) {
-                max = array[i + 2];
+            if (array.length > i) {
+                max = array[i];
+            } else {
+                max = array[i - 1];
             }
-            max = array[i + 1];
-            
+        } while (max > array[i - 1]);
+        if (i == 5) {
+            System.out.println("массив является возрастающей последовательностью");
+        } else {
+            System.out.println("не является массив возрастающей последовательностью");
         }
-
-
 
     }
 }
