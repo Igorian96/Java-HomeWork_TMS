@@ -1,3 +1,7 @@
+/**
+ * @autor Igor Ogadyarov
+ * created 21/3/26
+ */
 package home_work_Class_and_Objects;
 
 public class ATM {
@@ -17,19 +21,34 @@ public class ATM {
         this.banknote50 = banknote50;
         this.banknote1000 = banknote1000;
     }
-    public boolean withdrawMoney (int money) {
+
+    public boolean accrue(int money) {
         int sumBanknote = 20 * banknote20 + 50 * banknote50 + 1000 * banknote1000;
-        if (money > sumBanknote) {
-            System.out.println("Сумму, которое вы хотите снять, больше чем ваша сумма");
+        if (money > sumBanknote || money <= 0) {
+            System.out.println("Сумму, которое вы хотите снять, больше чем ваша сумма или отрицательная");
             return false;
         } else {
-//            сняли 25000
-            boolean flag = true;
-            int[][] array = {{banknote20, banknote50, banknote1000},{20, 50, 1000}};
-            for (int i = 0; i < array.length; i++) {
-                for (int j = 0; j < array[i].length; j++) {
+            int[] banknote = new int[3];
+            for (int i = 0; i < banknote.length; i++) {
+                switch (i) {
+                    case 0:
+                        banknote[i] = money / 1000;
+                        money -= banknote[i] * 1000;
+                        System.out.println("Банкнота с номиналом 1000: " + banknote[i] + " шт.");
+                        break;
+                    case 1:
+                        banknote[i] = money / 50;
+                        money -= banknote[i] * 50;
+                        System.out.println("Банкнота с номиналом 50: " + banknote[i] + " шт.");
+                        break;
+                    case 2:
+                        banknote[i] = money / 20;
+                        money -= banknote[i] * 20;
+                        System.out.println("Банкнота с номиналом 20: " + banknote[i] + " шт.");
+                        break;
                 }
             }
+            return true;
+        }
     }
-
 }
