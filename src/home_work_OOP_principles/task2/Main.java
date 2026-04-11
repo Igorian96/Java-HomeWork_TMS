@@ -11,7 +11,8 @@ package home_work_OOP_principles.task2;
  */
 public class Main {
     public static void main(String[] args) {
-        Apple apple = new Apple("Red");
-        System.out.println(apple.getColor());
+        Class class1 = Apple.class;
+        class1.getName();
+        class1.componentType();
     }
 }
